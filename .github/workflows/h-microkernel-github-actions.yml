@@ -1,15 +1,18 @@
-name: h-microkernel-ci-cd
+name: ci-cd
 run-name: ${{ github.actor }} testing on push
 on: [push]
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
+      # Checks out repository onto the runner 
       - uses: actions/checkout@v4
-      
+
+      # Compile
       - name: Build
         shell: bash
         run: gcc h-microkernel.c -o h-microkernel.exe
 
+      # Run
       - name: Deploy
-        run: ./microkernel.exe
+        run: ./h-microkernel.exe
