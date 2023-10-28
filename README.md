@@ -3,6 +3,8 @@ My lightweight and humble homemade microkernel
 
 ** Under Development **
 
+- Using GitHub Workflow to automatically test the code as an application
+
 
 ## References
 
