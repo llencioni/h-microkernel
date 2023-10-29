@@ -2,15 +2,22 @@ name: ci-cd
 
 run-name: ${{ github.actor }} testing on push
 
-on: [push]
+on:
+  push:
+    branches:
+      - main
 
 jobs:
 
   # Name of the Job
   build_and_run:
-  
+    
     # Runner
     runs-on: ubuntu-latest
+
+    # Environmental variables
+    env:
+      MSG: Compiling GCC
     
     # Groups all the steps that run in "build-and-run" job
     steps:
@@ -21,7 +28,9 @@ jobs:
       # Shell - Compile
       - name: Build
         shell: bash
-        run: gcc h-microkernel.c -o h-microkernel.exe
+        run: |
+          echo $MSG
+          gcc h-microkernel.c -o h-microkernel.exe
 
       # Shell - Run
       - name: Deploy
