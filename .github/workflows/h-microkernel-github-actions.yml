@@ -4,8 +4,9 @@ run-name: ${{ github.actor }} testing on push
 
 on:
   push:
-    branches:
-      - main
+    branches: [main]
+  pull_request: 
+    branches: [main]
 
 jobs:
 
