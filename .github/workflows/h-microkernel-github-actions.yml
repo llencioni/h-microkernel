@@ -1,6 +1,6 @@
 name: ci-cd
 
-run-name: ${{ github.actor }} testing on push
+run-name: ${{ github.actor }}
 
 on:
   push:
@@ -25,6 +25,11 @@ jobs:
       
       # Action - Checks out repository onto the runner 
       - uses: actions/checkout@v4
+
+      # Pre-build stuff
+      - name: Pre-Build
+        shell: bash
+        run: echo ${{ github.workspace }}
 
       # Shell - Compile
       - name: Build
