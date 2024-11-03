@@ -1,0 +1,3 @@
+[submodule "libC"]
+	path = libC
+	url = git@github.com:llencioni/libC.git
